@@ -1,0 +1,30 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>home</title>  
+</head>  
+<body>  
+    <h2>Hi, welcome to the website</h2>  
+    
+    <a href="/add">Add Blog</a><br><br>  
+    <a href ="/read">List Blogs</a><br><br>
+    <a href ="/updatetable">Edit a Blog</a><br><br>  
+    <a href="/delete">Delete a Blog</a><br><br>  
+    <br>
+
+    {% for post in posts %}
+    <div style="border:solid;">
+      <h2>
+        {{ post.title }}
+      </h2>
+      <h3 class="post-subtitle">
+        {{ post.subtitle }}
+      </h3>
+      <p>Posted by {{ post.author }} on {{ post.date_posted.strftime('%B %d, %Y') }}</p>
+      <br>
+      <p> {{post.content}} </p>
+    </div>
+    {% endfor %}
+    
+</body>  
+</html>  
